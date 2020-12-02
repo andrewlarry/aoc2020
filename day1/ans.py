@@ -17,14 +17,11 @@ def _find_two_nums(nums: List[int], target: int) -> Optional[Tuple[int, int]]:
     return None
 
 def part1(nums: List[int], target: int) -> Optional[int]:
-    if len(nums) < 2:
+    two = _find_two_nums(nums, target)
+    if two is None:
         return None
 
-    nums = _find_two_nums(nums, target)
-    if nums is None:
-        return None
-
-    return nums[0] * nums[1]
+    return two[0] * two[1]
 
 def part2(nums: List[int], target: int) -> Optional[int]:
     if len(nums) < 3:
