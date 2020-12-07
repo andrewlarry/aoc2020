@@ -24,7 +24,7 @@ def _read_row(row: str) -> int:
 def _read_col(col: str) -> int:
     return _read(col, 0, 8, 'L')
 
-def read_pass(boarding_pass: str) -> (int, int):
+def read_pass(boarding_pass: str) -> int:
     return SEAT_MULTIPLIER * _read_row(boarding_pass[:7]) + _read_col(boarding_pass[7:])
 
 def part1(boarding_passes: List[str]) -> int:
